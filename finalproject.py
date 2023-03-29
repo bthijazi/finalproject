@@ -1,3 +1,7 @@
+
+
+students = []
+courses = []
 class course():
     id = 0
     def __init__(self, course_name, level):
@@ -15,13 +19,16 @@ class student():
         self.student_courses = []
         student.id += 1
     def add_course(self):
-        new_course = input("enter new course name: ")
-        if new_course != course.name:
-           print("invalid course!")
-        else:
-            self.courses.append(new_course)
-            print("course added successfully.")
-
+        course_number = int(input("enter course id: "))
+        for j in courses:
+            if course_number == j.course_id:
+                if j in self.student_courses:
+                    print("course already exist")
+                else:
+                    self.student_courses.append(j)
+                    print("course added successfully")
+            else:
+                print("course not exist")
 
     def student_info(self):
         print(f"student name: {self.student_name} ,student level: {self.student_level}")
@@ -32,8 +39,6 @@ class student():
                 print(f"course name: {self.student_courses[i].name}, level: {self.student_courses[i].level}")
 
 
-students = []
-courses = []
 
 choice = -1
 while choice != 0:
@@ -105,16 +110,7 @@ while choice != 0:
         student_number = int(input("enter student number: "))
         for i in students:
             if student_number == i.student_id:
-                course_number = int(input("enter course id: "))
-                for j in courses:
-                    if course_number == j.course_id:
-                        if j in i.student_courses:
-                            print("course already exist")
-                        else:
-                            i.student_courses.append(j)
-                            print("course added successfully")
-                    else:
-                        print("course not exist")
+                i.add_course()
             else:
                 print("student not exist")
 
