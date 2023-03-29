@@ -16,7 +16,7 @@ class student():
         student.id += 1
     def add_course(self):
         new_course = input("enter new course name: ")
-        if new_course != course.get_name():
+        if new_course != course.name:
            print("invalid course!")
         else:
             self.courses.append(new_course)
