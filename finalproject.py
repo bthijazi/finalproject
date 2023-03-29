@@ -84,9 +84,9 @@ while choice != 0:
         for i in students:
             if update_id == i.student_id:
                 new_name = input("enter new name: ")
-                i.student_name == new_name
+                i.student_name = new_name
                 new_level = input("enter new level: (A, B or C)")
-                i.student_level == new_level
+                i.student_level = new_level
                 print("student removed successfully")
             else:
                 print("user not exist")
