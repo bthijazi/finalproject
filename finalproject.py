@@ -25,8 +25,11 @@ class student():
                 if j in self.student_courses:
                     print("course already exist")
                 else:
-                    self.student_courses.append(j)
-                    print("course added successfully")
+                    if self.student_level == j.level:
+                        self.student_courses.append(j)
+                        print("course added successfully")
+                    else:
+                        print("course not available for this level")
             else:
                 print("course not exist")
 
@@ -43,13 +46,13 @@ class student():
 choice = -1
 while choice != 0:
     print("""select choice please:
-    1.add new student
-    2.remove student
-    3.edit student
-    4.display all students
-    5.create new course
-    6.add course to student
-    0.exit""")
+1.add new student
+2.remove student
+3.edit student
+4.display all students
+5.create new course
+6.add course to student
+0.exit""")
     choice = int(input())
 
     if choice == 1:
@@ -85,8 +88,12 @@ while choice != 0:
             if update_id == i.student_id:
                 new_name = input("enter new name: ")
                 i.student_name = new_name
-                new_level = input("enter new level: (A, B or C)")
-                i.student_level = new_level
+                while True:
+                    student_level = input("enter student level: (A, B, or C) ")
+                    if student_level == 'A' or student_level == 'B' or student_level == 'C':
+                        break
+                    else:
+                        print("invalid level.")
                 print("student updated successfully")
             else:
                 print("user not exist")
