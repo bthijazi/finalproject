@@ -112,6 +112,7 @@ while choice != 0:
                 print("invalid level.")
         course = course(course_name=course_name, level=course_level)
         courses.append(course)
+        print("course added successfully.")
 
     elif choice == 6:
         student_number = int(input("enter student number: "))
