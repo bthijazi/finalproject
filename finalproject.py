@@ -87,7 +87,7 @@ while choice != 0:
                 i.student_name = new_name
                 new_level = input("enter new level: (A, B or C)")
                 i.student_level = new_level
-                print("student removed successfully")
+                print("student updated successfully")
             else:
                 print("user not exist")
 
