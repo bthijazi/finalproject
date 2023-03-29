@@ -93,6 +93,11 @@ while choice != 0:
     elif choice == 5:
         course_name = input("enter class name: ")
         course_level = input("enter course level: (A, B, or C)")
+        while True:
+            if course_level == 'A' or course_level == 'B' or course_level == 'C':
+                break
+            else:
+                print("invalid level.")
         course = course(course_name=course_name, level=course_level)
         courses.append(course)
 
@@ -103,8 +108,11 @@ while choice != 0:
                 course_number = int(input("enter course id: "))
                 for j in courses:
                     if course_number == j.course_id:
-                        i.student_courses.append(j)
-                        print("course added successfully")
+                        if j in i.student_courses:
+                            print("course already exist")
+                        else:
+                            i.student_courses.append(j)
+                            print("course added successfully")
                     else:
                         print("course not exist")
             else:
