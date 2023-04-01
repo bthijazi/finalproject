@@ -1,7 +1,8 @@
-finalproject with python for GSG ITF06, it is a school program management which provides next services:
+finalproject with python for GSG IT Fudementals 06 with python, it is a school management system which provides next services:
+
 1. adding new student
-2. deleting exist student 
+2. delete student 
 3. updating student information
-4. showing students list
-5. adding course to the school
+4. displaying all students
+5. crearte new course
 6. adding a course for student
